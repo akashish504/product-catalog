@@ -12,13 +12,11 @@ const DATABASE_URL = process.env.DATABASE_URL;
 const DATABASE_NAME = process.env.DATABASE_NAME;
 
 const nosqlDBconnecttion = () => {
-    const url = `mongodb://${DATABASE_URL}/${DATABASE_NAME}`;
+    // const url = `mongodb://${DATABASE_URL}/${DATABASE_NAME}`;
+    const url  = `mongodb+srv://ashish:ashish@cluster0.huzrl.mongodb.net/?retryWrites=true&w=majority`
    
     try {
-        mongoose.connect(url, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        mongoose.connect(url, { serverApi: { version: '1', strict: true, deprecationErrors: true } });
     } catch (err) {
         console.error(err.message);
         process.exit(1);
