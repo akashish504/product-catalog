@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const {sqlDBconnection} = require('./../db_connections/database');
+// const {sqlDBconnection} = require('./../db_connections/database');
 
 const { UserModel } = require('./model');
 
